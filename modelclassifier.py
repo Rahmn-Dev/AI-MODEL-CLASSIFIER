@@ -1,10 +1,15 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+<<<<<<< HEAD
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
 import seaborn as sns
+=======
+from sklearn.metrics import accuracy_score, classification_report
+from sklearn.preprocessing import LabelEncoder
+>>>>>>> origin/main
 
 # Memuat dataset
 data = pd.read_csv("dataset/HotelReservations.csv")
@@ -38,6 +43,7 @@ print(f"Classification Report:\n{report}")
 
 # Menyimpan data train ke dalam file CSV
 train_result = pd.concat([X_train, y_train], axis=1)
+<<<<<<< HEAD
 train_result.to_csv("data-train/train_data.csv", index=False)
 
 # Menyimpan data test ke dalam file CSV
@@ -66,3 +72,10 @@ plt.title('Confusion Matrix for Test Data')
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.show()
+=======
+train_result.to_csv("train_data.csv", index=False)
+
+# Menyimpan data test ke dalam file CSV
+test_result = pd.concat([X_test, y_test], axis=1)
+test_result.to_csv("test_data.csv", index=False)
+>>>>>>> origin/main

@@ -39,11 +39,11 @@ print(f"Classification Report:\n{report}")
 
 # Menyimpan data train ke dalam file CSV
 train_result = pd.concat([X_train, y_train], axis=1)
-train_result.to_csv("train-data/train_data2.csv", index=False)
+train_result.to_csv("data-train/train_data2.csv", index=False)
 
 # Menyimpan data test ke dalam file CSV
 test_result = pd.concat([X_test, y_test], axis=1)
-test_result.to_csv("test-data/test_data2.csv", index=False)
+test_result.to_csv("data-test/test_data2.csv", index=False)
 
 # Visualisasi
 # Plot distribusi kelas pada data train, distribusi kelas pada data test, dan confusion matrix

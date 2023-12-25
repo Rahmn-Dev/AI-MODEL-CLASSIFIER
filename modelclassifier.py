@@ -1,8 +1,10 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, classification_report
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.preprocessing import LabelEncoder
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Memuat dataset
 data = pd.read_csv("dataset/HotelReservations.csv")
@@ -36,8 +38,31 @@ print(f"Classification Report:\n{report}")
 
 # Menyimpan data train ke dalam file CSV
 train_result = pd.concat([X_train, y_train], axis=1)
-train_result.to_csv("train_data.csv", index=False)
+train_result.to_csv("data-train/train_data.csv", index=False)
 
 # Menyimpan data test ke dalam file CSV
 test_result = pd.concat([X_test, y_test], axis=1)
-test_result.to_csv("test_data.csv", index=False)
+test_result.to_csv("data-test/test_data.csv", index=False)
+
+# Visualisasi
+# Plot distribusi kelas pada data train
+plt.figure(figsize=(8, 6))
+sns.countplot(x='booking_status', data=train_result)
+plt.title('Distribution of Classes in Train Data')
+plt.show()
+
+# Plot distribusi kelas pada data test
+plt.figure(figsize=(8, 6))
+sns.countplot(x='booking_status', data=test_result)
+plt.title('Distribution of Classes in Test Data')
+plt.show()
+
+# Confusion Matrix untuk data test
+cm = confusion_matrix(y_test, predictions)
+
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=label_encoder.classes_, yticklabels=label_encoder.classes_)
+plt.title('Confusion Matrix for Test Data')
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.show()

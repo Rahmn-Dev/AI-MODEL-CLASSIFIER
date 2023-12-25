@@ -4,10 +4,30 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-scikit-learn = "*"
+contourpy = "*"
+cycler = "*"
+fonttools = "*"
+joblib = "*"
+kiwisolver = "*"
+matplotlib = "*"
+numpy = "*"
+packaging = "*"
 pandas = "*"
+Pillow = "*"
+pip = "*"
+pyparsing = "*"
+python-dateutil = "*"
+pytz = "*"
+scikit-learn = "*"
+scipy = "*"
+seaborn = "*"
+setuptools = "*"
+six = "*"
+threadpoolctl = "*"
+tzdata = "*"
+wheel = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "*"

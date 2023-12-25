@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-<<<<<<< HEAD
 contourpy = "*"
 cycler = "*"
 fonttools = "*"
@@ -27,16 +26,8 @@ six = "*"
 threadpoolctl = "*"
 tzdata = "*"
 wheel = "*"
-=======
-scikit-learn = "*"
-pandas = "*"
->>>>>>> origin/main
 
 [dev-packages]
 
 [requires]
-<<<<<<< HEAD
 python_version = "*"
-=======
-python_version = "3.10"
->>>>>>> origin/main
